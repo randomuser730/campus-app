@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-Karriere bei HOM Immobilien</title>
+    <meta name="description" content="Bewirb dich jetzt als Systemadministrator. Theorie ist gut, Praxis ist besser.">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tech-blue': '#0044CC',
+                        'tech-blue-dark': '#003399',
+                        'off-white': '#f8fafc',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(0, 68, 204, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities */
+        .glass-header {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+        }
+
+        .play-button-overlay {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(2px);
+            transition: all 0.3s ease;
+        }
+
+        .play-button-overlay:hover {
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation for blob background */
+        @keyframes blob {
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+    </style>
+</head>
+
+<body class="bg-off-white text-gray-900 font-sans antialiased selection:bg-blue-100 selection:text-tech-blue">
+
+    <!-- Header (Sticky & Glassmorphism) -->
+    <header class="fixed w-full top-0 z-50 glass-header transition-all duration-300">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <!-- Abstract Tech Logo -->
+                <div
+                    class="w-8 h-8 bg-tech-blue rounded-lg flex items-center justify-center text-white font-bold shadow-lg shadow-blue-500/30">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <span class="font-bold text-lg tracking-tight text-gray-900">HOM<span
+                        class="text-gray-400 font-normal">.campus</span></span>
+            </div>
+            <a href="#apply"
+                class="inline-block px-4 py-2 text-sm font-semibold text-tech-blue border border-tech-blue/30 rounded-full hover:bg-blue-50 transition-colors">
+                Jetzt bewerben
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-xl mx-auto px-6 pt-28 pb-20">
+
+        <!-- Hero Section -->
+        <section class="text-center mb-12">
+            <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight text-gray-900 mb-4">
+                Theorie ist gut.<br>
+                <span class="text-tech-blue">Praxis ist besser.</span>
+            </h1>
+            <p class="text-sm font-semibold text-gray-500 tracking-[0.2em] uppercase mb-8">In 20 Sekunden zum Job</p>
+
+            <!-- Video Container -->
+            <div class="relative w-full aspect-video bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-gray-200 group transform transition-transform hover:scale-[1.01] duration-500"
+                id="video-container">
+                <video id="recruiting-video" class="w-full h-full object-cover" playsinline preload="metadata">
+                    <!-- Placeholder src, ensures structure exists -->
+                    <source src="assets/video.mp4" type="video/mp4">
+                    Dein Browser unterstützt das Video-Tag nicht.
+                </video>
+
+                <!-- Custom Play Overlay -->
+                <div id="play-overlay"
+                    class="absolute inset-0 flex flex-col items-center justify-center play-button-overlay cursor-pointer group">
+                    <div
+                        class="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 shadow-xl transform transition-all duration-300 group-hover:scale-110 group-hover:bg-tech-blue group-hover:border-transparent">
+                        <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </div>
+                    <p class="text-white font-medium mt-4 text-sm tracking-wide opacity-90">Film abspielen</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16">
+            <!-- Benefit 1 -->
+            <div
+                class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center text-center transition-shadow hover:shadow-md">
+                <div
+                    class="w-12 h-12 bg-blue-100 text-tech-blue rounded-full flex items-center justify-center mb-4 text-xl font-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-1">Flexible Zeiten</h3>
+                <p class="text-xs text-gray-500 leading-relaxed">Dein Studium geht vor. Wir passen uns deinem
+                    Stundenplan an.</p>
+            </div>
+
+            <!-- Benefit 2 -->
+            <div
+                class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center text-center transition-shadow hover:shadow-md">
+                <div class="w-12 h-12 bg-blue-100 text-tech-blue rounded-full flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-1">Top Hardware</h3>
+                <p class="text-xs text-gray-500 leading-relaxed">MacBook Pro oder Dell XPS? Du entscheidest dein Setup.
+                </p>
+            </div>
+
+            <!-- Benefit 3 -->
+            <div
+                class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center text-center transition-shadow hover:shadow-md">
+                <div class="w-12 h-12 bg-blue-100 text-tech-blue rounded-full flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-1">Cooles Team</h3>
+                <p class="text-xs text-gray-500 leading-relaxed">Kein Dresscode, Duz-Kultur und regelmäßige Events.</p>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section (New) -->
+        <section class="mb-16">
+            <p class="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Unser Tech Stack</p>
+            <div
+                class="flex flex-wrap justify-center gap-6 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                <!-- AWS -->
+                <div class="flex flex-col items-center gap-2">
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center border border-gray-100 p-2">
+                        <svg viewBox="0 0 24 24" class="w-full h-full text-[#FF9900]" fill="currentColor">
+                            <path
+                                d="M17.4 12.6c-.3-.8-.7-1.4-1.1-2 .6-.6 1.1-1.3 1.5-2.1.2-.5.1-1.1-.3-1.4-.4-.3-1-.2-1.3.2-.4.6-.7 1.2-1.1 1.8-.6-.6-1.3-1.1-2.1-1.4-.2-.1-.5-.1-.7.1-.1.1-.2.2-.2.3 0 .2.1.5.3.6.7.3 1.3.7 1.9 1.2-.6.7-1.2 1.4-1.7 2.1-.5-.1-1-.2-1.5-.2-1.3 0-2.5.4-3.5 1.1-.9.7-1.5 1.7-1.8 2.8-.2.9 0 1.8.5 2.5.5.7 1.3 1.1 2.2 1.1 1.2 0 2.3-.6 3-1.5.5.5 1.1.9 1.8 1.2.7.3 1.5.4 2.2.4 1.5 0 2.9-.5 4-1.4.9-.7 1.5-1.7 1.8-2.8.2-.8 0-1.7-.5-2.4l-.5-.2zm-8.8 3.5c-.3.4-.8.7-1.3.7-.4 0-.8-.2-1.1-.5-.2-.3-.3-.7-.2-1.1.1-.5.4-.9.8-1.3.4-.3.9-.5 1.4-.5.2 0 .5.1.7.2l-.3 2.5zm5.7 1.2c-.5.4-1.2.7-1.9.7-.7 0-1.4-.2-2-.6-.5-.3-.9-.8-1.1-1.3l.4-3.1c.4-.6 1-1.2 1.5-1.7l1.7 1.9c.2.2.5.2.7 0 .2-.2.2-.5 0-.7-.3-.3-.6-.6-.9-.9 1.1.5 1.9 1 2.6 1.8.4.5.6 1.1.5 1.7-.1.6-.3 1.1-.7 1.5-.2.2-.5.4-.8.7z" />
+                        </svg>
+                    </div>
+                </div>
+                <!-- Python -->
+                <div class="flex flex-col items-center gap-2">
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center border border-gray-100 p-2">
+                        <svg viewBox="0 0 24 24" class="w-full h-full" fill="url(#python-gradient)">
+                            <linearGradient id="python-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3776AB" />
+                                <stop offset="100%" style="stop-color:#FFD43B" />
+                            </linearGradient>
+                            <path
+                                d="M14.25.18l.9.03c1.19.1 2.1.2 2.64.44a5.03 5.03 0 0 1 2.22 1.45 5.03 5.03 0 0 1 1 2.64c.24.8.34 1.83.34 3.75v.9H16.8v-.9c0-1.3-.08-1.99-.24-2.48-.15-.46-.38-.8-.74-1.16-.36-.36-.7-.59-1.16-.74-.49-.16-1.18-.24-2.48-.24H8.8c-1.3 0-1.99.08-2.48.24-.46.15-.8.38-1.16.74-.36.36-.59.7-.74 1.16-.16.49-.24 1.18-.24 2.48v1.35h6.63c1.92 0 2.95.1 3.75.34.8.24 1.48.66 2.05 1.23.57.57 1 1.25 1.23 2.05.24.8.34 1.83.34 3.75v2.24H12.9c-1.92 0-2.95-.1-3.75-.34-.8-.24-1.48-.66-2.05-1.23-.57-.57-1-1.25-1.23-2.05-.24-.8-.34-1.83-.34-3.75v-.9H.18v.9c0 1.3.08 1.99.24 2.48.15.46.38.8.74 1.16.36.36.7.59 1.16.74.49.16 1.18.24 2.48.24h3.37v-1.35H1.54c-1.92 0-2.95-.1-3.75-.34-.8-.24-1.48-.66-2.05-1.23-.57-.57-1-1.25-1.23-2.05-.24-.8-.34-1.83-.34-3.75V8.81c0-1.3.08-1.99.24-2.48.15-.46.38-.8.74-1.16.36-.36.7-.59 1.16-.74.49-.16 1.18-.24 2.48-.24h3.37V.18zM6.9 2.87c.6 0 1.08.48 1.08 1.08 0 .6-.48 1.08-1.08 1.08-.6 0-1.08-.48-1.08-1.08 0-.6.48-1.08 1.08-1.08zm10.2 16.7c.6 0 1.08.48 1.08 1.08 0 .6-.48 1.08-1.08 1.08-.6 0-1.08-.48-1.08-1.08 0-.6.48-1.08 1.08-1.08z"
+                                fill="#3776AB" />
+                        </svg>
+                    </div>
+                </div>
+                <!-- Docker -->
+                <div class="flex flex-col items-center gap-2">
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center border border-gray-100 p-2">
+                        <svg viewBox="0 0 24 24" class="w-full h-full text-[#2496ED]" fill="currentColor">
+                            <path
+                                d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.119a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.119a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.119a.186.186 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.119a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.185m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.185m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.185m5.892 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.185v1.888c0 .102.084.185.186.185m-2.929 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m2.929 2.714h-2.12a.186.186 0 00-.184.186v1.886c0 .102.083.185.185.185h2.12a.185.185 0 00.184-.185v-1.886a.185.185 0 00-.184-.186m14.246 2.05s-2.952-1.574-8.834-1.743c-3.185-.04-4.8.966-5.835 1.748-1.571 1.173-1.076 3.497-1.076 3.497l.115.12c.563-.15 1.341-.123 1.83.197.64.417 1.054 1.168.995 2.008-.06.877-.66 1.636-1.464 1.936a2.001 2.001 0 01-2.071-.34l-.067.068a4.912 4.912 0 003.543 1.5c4.78.07 9.091-3.328 12.865-8.992z" />
+                        </svg>
+                    </div>
+                </div>
+                <!-- Linux -->
+                <div class="flex flex-col items-center gap-2">
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center border border-gray-100 p-2">
+                        <svg viewBox="0 0 24 24" class="w-full h-full text-black" fill="currentColor">
+                            <path
+                                d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zm0 2.1c-.815 0-1.545.228-2.17.653 1.196.262 2.378.85 2.17 2.17.917-.7 1.258-1.928 2.03-2.17-.55-.417-1.22-.653-1.93-.653h-.1zm-4.322 3.65c-.246.39-.425.867-.425 1.54 0 1.93 1.385 1.77 1.385 3.328 0 .426-.06.84-.257 1.205-.285-.29-.72-.375-1.05-.24-.266.11-.475.334-.585.597-.107.253-.1.53.037.767.14.238.38.397.65.43 1.135.134 1.246 1.487 1.246 2.032 0 1.432-.61 2.215-1.22 2.228-1.397.027-2.3-1.428-2.195-2.793.04-1.365.19-2.002.34-3.528.16-1.52.28-3.047 1.52-4.805.15-.157.32-.284.5-.392l.05.632zM15.222 5.75c.18.11.35.235.5.39 1.255 1.748 1.378 3.275 1.534 4.8.15 1.527.306 2.164.343 3.53.11 1.363-.797 2.818-2.196 2.79-1.39-.028-1.983-1.55-1.29-3.03.376-1.21.366-1.747.23-2.006-.1-.184-.28-.313-.49-.36-.26-.057-.54.02-.733.203-.38.36-.297 1.096-.285 1.573-.197-.365-.257-.778-.257-1.206 0-1.557 1.385-1.4 1.385-3.326 0-.673-.18-1.15-.425-1.54l.117-.565z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section (New) -->
+        <section class="mb-16">
+            <div class="bg-gray-900 rounded-3xl overflow-hidden shadow-2xl relative">
+                <!-- Abstract Background -->
+                <div
+                    class="absolute top-0 right-0 w-64 h-64 bg-tech-blue rounded-full filter blur-[80px] opacity-20 transform translate-x-1/2 -translate-y-1/2">
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-0">
+                    <div class="p-8 md:p-12 flex flex-col justify-center relative z-10">
+                        <span class="text-tech-blue font-bold tracking-wider text-sm mb-2 uppercase">Über HOM
+                            Immobilien</span>
+                        <h2 class="text-3xl font-bold text-white mb-4 leading-tight">Wir bauen die <br>Zukunft des
+                            Wohnens.</h2>
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">
+                            Wir sind kein verstaubter Konzern. Bei uns trifft Immobilien-Expertise auf Start-up
+                            Mentalität.
+                            Unser Team in Merseburg wächst – und wir brauchen Technologie, um zu skalieren.
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-gray-700 rounded-full overflow-hidden border-2 border-tech-blue flex items-center justify-center text-xl text-white font-bold">
+                                M
+                            </div>
+                            <div>
+                                <p class="text-white font-bold text-sm">Matthias von Ohr</p>
+                                <p class="text-gray-500 text-xs">Geschäftsführer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Image / Placeholder -->
+                    <div class="bg-gray-800 h-64 md:h-auto w-full relative group overflow-hidden">
+                        <!-- Placeholder for Office Image -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-gray-800 to-black flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-20 w-20 text-gray-700 group-hover:text-tech-blue transition-colors duration-500"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                        </div>
+                        <!-- Use an actual image if willing to link external or standard asset -->
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Modernes Büro"
+                            class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Form -->
+        <section id="apply" class="relative">
+            <!-- Decorative background blob -->
+            <div
+                class="absolute -top-10 -left-10 w-40 h-40 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob">
+            </div>
+            <div
+                class="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000">
+            </div>
+
+            <div class="relative bg-white p-8 rounded-2xl shadow-xl border border-gray-100 ring-1 ring-black/5">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-gray-900">Bewerben in 20s</h2>
+                    <p class="text-sm text-gray-500 mt-1">Kein Anschreiben nötig.</p>
+                </div>
+
+                <form id="application-form" class="space-y-5">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="col-span-1">
+                            <label for="firstname"
+                                class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Vorname</label>
+                            <input type="text" id="firstname" name="firstname" required
+                                class="w-full px-4 py-3 bg-gray-50 text-gray-900 rounded-lg border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-tech-blue focus:border-transparent transition-all placeholder-gray-400"
+                                placeholder="Max">
+                        </div>
+                        <div class="col-span-1">
+                            <label for="lastname"
+                                class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Nachname</label>
+                            <input type="text" id="lastname" name="lastname" required
+                                class="w-full px-4 py-3 bg-gray-50 text-gray-900 rounded-lg border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-tech-blue focus:border-transparent transition-all placeholder-gray-400"
+                                placeholder="Mustermann">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="email"
+                            class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">E-Mail</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full px-4 py-3 bg-gray-50 text-gray-900 rounded-lg border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-tech-blue focus:border-transparent transition-all placeholder-gray-400"
+                            placeholder="max@campus.de">
+                    </div>
+
+                    <div>
+                        <label for="phone"
+                            class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Telefon
+                            (Optional)</label>
+                        <input type="tel" id="phone" name="phone"
+                            class="w-full px-4 py-3 bg-gray-50 text-gray-900 rounded-lg border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-tech-blue focus:border-transparent transition-all placeholder-gray-400"
+                            placeholder="0123 456789">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Dein
+                            Lebenslauf</label>
+                        <div class="relative group">
+                            <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required class="hidden"
+                                onchange="updateFileName()">
+                            <label for="cv"
+                                class="flex flex-col items-center justify-center w-full px-6 py-8 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-tech-blue hover:bg-blue-50/50 transition-all bg-gray-50 group-hover:bg-blue-50/50">
+                                <div
+                                    class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-tech-blue mb-2 group-hover:scale-110 transition-transform">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                    </svg>
+                                </div>
+                                <span id="file-label" class="text-sm font-medium text-gray-600">Klicken zum
+                                    Uploaden</span>
+                                <span class="text-xs text-gray-400 mt-1">PDF oder DOCX (max. 5MB)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submit-btn"
+                        class="w-full bg-tech-blue hover:bg-tech-blue-dark text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-500/30 transform transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-95 flex items-center justify-center gap-2 mt-4 text-lg">
+                        <span>Jetzt absenden</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </button>
+
+                    <p id="status-message" class="hidden text-center text-sm font-medium mt-4"></p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <!-- Professional Footer -->
+        <footer class="mt-24 border-t border-gray-200 pt-12 pb-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Col 1: Brand -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div
+                            class="w-8 h-8 bg-tech-blue rounded-lg flex items-center justify-center text-white font-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <span class="font-bold text-lg text-gray-900">HOM<span
+                                class="text-gray-400 font-normal">.campus</span></span>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
+                        Wir digitalisieren den Immobilienmarkt. Werde Teil unseres Teams und gestalte die Zukunft mit
+                        modernen Technologien.
+                    </p>
+                </div>
+
+                <!-- Col 2: Rechtliches -->
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-4">Rechtliches</h3>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="impressum.html" class="hover:text-tech-blue transition-colors">Impressum</a></li>
+                        <li><a href="datenschutz.html" class="hover:text-tech-blue transition-colors">Datenschutz</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Kontakt -->
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-4">Kontakt</h3>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li>HOM Immobilien GmbH</li>
+                        <li>Gotthardstraße 39</li>
+                        <li>06217 Merseburg</li>
+                        <li class="pt-2"><a href="mailto:immobilien.hom@gmail.com"
+                                class="hover:text-tech-blue transition-colors">immobilien.hom@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-100 pt-8 text-center">
+                <p class="text-xs text-gray-400">&copy; 2026 HOM Immobilien GmbH. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
