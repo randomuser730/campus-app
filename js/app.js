@@ -100,7 +100,7 @@ async function handleFormSubmit(e) {
         if (!submitResponse.ok) throw new Error('Fehler beim Senden der Bewerbung.');
 
         // Success
-        form.reset();
+        e.target.reset();
         document.getElementById('file-label').textContent = 'Datei auswählen...';
         submitBtn.innerHTML = `
             <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

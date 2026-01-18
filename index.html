@@ -601,7 +601,7 @@
             </div>
 
             <div class="video-container" id="video-container">
-                <video id="recruiting-video" playsinline preload="metadata" poster="assets/bild video.png">
+                <video id="recruiting-video" playsinline preload="metadata" poster="assets/poster.jpg">
                     <source src="assets/video.mp4" type="video/mp4">
                     Dein Browser unterstützt das Video-Tag nicht.
                 </video>
@@ -663,7 +663,7 @@
 
                     <div class="about-author">
                         <div class="author-avatar">
-                            <img src="assets/matthias.png" alt="Matthias von Ohr">
+                            <img src="assets/matthias.jpg" alt="Matthias von Ohr">
                         </div>
                         <div class="author-info">
                             <p class="author-name">Matthias von Ohr</p>
@@ -687,23 +687,23 @@
             <form id="application-form">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="firstname">Vorname</label>
+                        <label for="firstname">Vorname *</label>
                         <input type="text" id="firstname" name="firstname" required>
                     </div>
                     <div class="form-group">
-                        <label for="lastname">Nachname</label>
+                        <label for="lastname">Nachname *</label>
                         <input type="text" id="lastname" name="lastname" required>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">E-Mail</label>
+                    <label for="email">E-Mail *</label>
                     <input type="email" id="email" name="email" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">Telefon (Optional)</label>
-                    <input type="tel" id="phone" name="phone">
+                    <label for="phone">Telefon *</label>
+                    <input type="tel" id="phone" name="phone" required>
                 </div>
 
                 <div class="form-group">
@@ -715,7 +715,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn-primary submit-button">Jetzt absenden</button>
+                <button type="submit" id="submit-btn" class="btn-primary submit-button">Jetzt absenden</button>
                 <p id="status-message" class="hidden"></p>
             </form>
         </div>
